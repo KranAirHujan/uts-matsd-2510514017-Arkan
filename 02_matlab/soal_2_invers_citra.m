@@ -1,6 +1,6 @@
 % ===================================================== 
 %  UTS Matematika Sains Data — Semester Genap 2025/2026 
-%  Soal 2d — Verifikasi Invers Manual vs MATLAB
+%  Soal 2 — veifikasi invers matriks dan visualisasi enkripsi citra grayscale
 %  --------------------------------------------------- 
 %  Nama  : Muhammad Arkan Ryanto
 %  NIM   : 17
@@ -15,6 +15,7 @@ K=9;
 theta0=65; 
 alpha=0.008;
 
+% Soal 2d — Verifikasi Invers Manual vs MATLAB
 A = [a+1, b, 2; 
      1, a+2, b; 
      b, 1, a+3];
@@ -37,6 +38,7 @@ A_inv_manual = C' / det(A);
 
 error_fro = norm(A_inv_manual - A_inv, 'fro');
 
+fprintf('================================\n');
 fprintf('Determinan A: %.2f\n', det(A));
 fprintf('Norma Error Frobenius: %.2e\n', error_fro);
 
@@ -49,9 +51,11 @@ E = A * P;
 
 P_de = A_inv * E;
 
+fprintf('================================\n');
 disp('Matriks Piksel Asli (P):'); disp(P);
 disp('Matriks Terenkripsi (E):'); disp(E);
 disp('Matriks Hasil Dekripsi (P''):'); disp(round(P_de));
+fprintf('================================\n');
 
 figure('Name', 'Visualisasi Enkripsi Citra ', 'Color', 'k');
 
@@ -66,5 +70,6 @@ imshow(uint8(E), []);
 title('Blok Piksel Enkripsi (E)');
 xlabel('Hasil: A * P');
 colorbar;
+
 folderName = 'gambar';
 saveas(gcf, fullfile(folderName, 'Visualisasi_Enkripsi_17.png'));
