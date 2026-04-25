@@ -40,6 +40,7 @@ error_fro = norm(A_inv_manual - A_inv, 'fro');
 fprintf('Determinan A: %.2f\n', det(A));
 fprintf('Norma Error Frobenius: %.2e\n', error_fro);
 
+% Soal 2f — Visualisasi Rekonstruksi Citra Grayscale
 P = [120, (50 + N), 200; 
      80, (a + 2), (10 + N); 
      (30 + N), 90, 170];
@@ -52,7 +53,7 @@ disp('Matriks Piksel Asli (P):'); disp(P);
 disp('Matriks Terenkripsi (E):'); disp(E);
 disp('Matriks Hasil Dekripsi (P''):'); disp(round(P_de));
 
-figure('Name', 'Visualisasi Enkripsi Citra - NIM 17', 'Color', 'k');
+figure('Name', 'Visualisasi Enkripsi Citra ', 'Color', 'k');
 
 subplot(1,2,1);
 imshow(uint8(P), []); 
