@@ -17,8 +17,6 @@ alpha_lr = 0.008;
   
 % 7.1 & 7.2: Identifikasi Pola & Operasi Sigma
 t = 1:12; 
-% Persamaan: S_n = 50 + K*n + (a+1)*(-1)^n
-% Substitusi: S_n = 50 + 9n + 2(-1)^n
 S = 50 + (K*t) + (a+1)*(-1).^t; 
 
 % Verifikasi T1 dan T2
@@ -72,27 +70,22 @@ fprintf('Intercept (b0)                : %.4f\n', intercept);
 fprintf('Mean Absolute Error (MAE)     : %.4f\n', MAE);
 
 % Visualisasi 
-% Pastikan baris di bawah ini ada 'hFig =' agar bisa dipanggil oleh saveas
 hFig = figure; 
 hold on; 
-
-% 1. Data Historis (Biru, Titik)
 plot(t, S, 'bo', 'MarkerFaceColor', 'b', 'MarkerSize', 7, ...
     'DisplayName', 'Data Historis (Biru, Titik)'); 
 
-% 2. Garis Tren BERLANJUT (Merah Putus-putus, n=1 sampai 18)
 t_full = 1:18; 
 S_trend_full = polyval(p, t_full); 
 plot(t_full, S_trend_full, 'r--', 'LineWidth', 1.5, ...
     'DisplayName', 'Garis Tren (Merah Putus-putus) + Lanjutan'); 
 
-% 3. Prediksi (Hijau, Segitiga, n=13 sampai 18)
 plot(t_pred, S_pred, 'g^', 'MarkerFaceColor', 'g', 'MarkerSize', 9, ...
     'DisplayName', 'Prediksi S13-S18 (Hijau, Segitiga)'); 
 
 % --- Pengaturan Grafik ---
 grid on; 
-title(['Analisis Tren Penjualan - Muhammad Arkan Ryanto (Alpha=', num2str(alpha_lr), ')']); 
+title('Analisis Tren Penjualan'); 
 xlabel('Bulan ke-n'); 
 ylabel('Penjualan (Juta Rp)'); 
 
