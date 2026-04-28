@@ -55,7 +55,6 @@ fprintf('================================\n');
 disp('Matriks Piksel Asli (P):'); disp(P);
 disp('Matriks Terenkripsi (E):'); disp(E);
 disp('Matriks Hasil Dekripsi (P''):'); disp(round(P_de));
-fprintf('================================\n');
 
 figure('Name', 'Visualisasi Enkripsi Citra ', 'Color', 'k');
 
