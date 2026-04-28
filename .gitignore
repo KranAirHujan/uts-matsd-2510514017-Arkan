@@ -1,30 +1,4 @@
-# --- MATLAB Specific ---
-# File biner dan simulink yang dibuat saat menjalankan model
 *.asv
-*.mex*
-*.slxc
-*.sxc
-*.slxp
-
-# Folder buatan MATLAB untuk kode yang dikompilasi atau simulasi cepat
 slprj/
-codegeneration/
-
-# File log dan profil
-*.log
-*.p
-*.mlappinstall
-
-# Folder laporan dan dokumentasi otomatis
-html/
-latex/
-
-# --- File App Designer & Workspace ---
-# Sebaiknya tidak menyertakan file data besar (.mat) ke Git
-# Buka komentar di bawah jika ingin mengabaikan semua file data
-# *.mat
-
-# --- File Sistem & Editor ---
-.DS_Store
-Thumbs.db
-desktop.ini
+*.tmp
+*.bak
